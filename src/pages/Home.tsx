@@ -7,9 +7,9 @@ const { Content } = Layout;
 
 const Home = () => {
   const posts = [
-    { title: 'Como eu estou usando o AtProtocol', date: '07/07/24', link: '/posts/react-native-ci-cd' },
-    { title: 'O que musica tem haver com programar', date: '04/15/24', link: '/posts/selectable-text' },
-    { title: 'Ter TDH pode ser uma vantagem (sem meme)', date: '04/15/24', link: '/posts/atprotocol-blog' }
+    { title: 'O que é um Atprotocol?', date: '07/07/24', link: '/posts/react-native-ci-cd' },
+    { title: 'Vamo parar de iventar moda, a arte do arroz com feijão', date: '04/15/24', link: '/posts/selectable-text' },
+    { title: 'Todo DJ iniciante não pode apetar o botão de SYNC (entenda)', date: '04/15/24', link: '/posts/atprotocol-blog' }
   ];
 
   return (

@@ -17,7 +17,7 @@ interface BlogPostsProps {
 const BlogPosts = ({ posts }: BlogPostsProps) => {
   return (
     <div className="blog-posts">
-      <Title level={3} className="blog-title">Music, T.I Stuff, Desabafos</Title>
+      <Title level={3} className="blog-title">Music, I.T Stuff, Shitpost</Title>
       <Title level={3} className="blog-sub-tittle">Blog Posts</Title>
       <List
         itemLayout="horizontal"

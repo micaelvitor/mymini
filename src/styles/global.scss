@@ -1,7 +1,7 @@
-$background-color: #1f2f47;
-$content-background: #1f2f47;
-$text-color: #ddd;
-$highlight-color: #3e71be;
+$background-color: #000b1b;
+$content-background: #000b1b;
+$text-color: #fffffffa;
+$highlight-color: #ffffff;
 $border-color: #202023;
 
 * {
@@ -69,22 +69,23 @@ body {
     background-color: $background-color;
     padding: 0 24px;
     border-bottom: 1px solid $border-color;
-  
-    a {
-      color: $text-color;
-      text-decoration: none;
-      font-size: 1rem;
-  
-      &:hover {
-        color: $highlight-color;
-      }
-    }
+    height: 80px; 
   
     .header-links {
       display: flex;
       gap: 24px;
+      
+      a {
+        color: $text-color;
+        font-size: 1.2rem;
+        text-decoration: none;
+  
+        &:hover {
+          color: $highlight-color;
+        }
+      }
     }
-}
+  }
 
 .blog-posts {
     text-align: left; 

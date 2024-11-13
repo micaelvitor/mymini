@@ -1,4 +1,3 @@
-// src/components/ProfileSection.tsx
 import { Avatar, Typography } from 'antd';
 
 const { Title } = Typography;
