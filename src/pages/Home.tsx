@@ -1,3 +1,4 @@
+// src/pages/Home.tsx
 import { Layout } from 'antd';
 import ProfileSection from '../components/ProfileSection';
 import BlogPosts from '../components/BlogPosts';
@@ -12,7 +13,7 @@ const Home = () => {
   ];
 
   return (
-    <Content style={{ padding: '24px', backgroundColor: '#1f2f47', display: 'flex', justifyContent: 'center' }}>
+    <Content>
       <div style={{ maxWidth: '900px', width: '100%' }}>
         <ProfileSection />
         <BlogPosts posts={posts} />
