@@ -147,6 +147,56 @@ body {
     }
 }
 
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $background-color;
+}
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $background-color;
+}
+
+.login-card {
+  width: 400px;
+  text-align: center;
+  background-color: $content-background;
+  border-radius: 0;
+  border: none;
+  box-shadow: none; 
+
+  .ant-typography {
+    color: $text-color;
+  }
+
+  .ant-form-item-label > label {
+    color: $text-color;
+  }
+
+  .ant-input,
+  .ant-input-password {
+    background-color: #ffffff;
+    color: #000000;
+  }
+
+  .ant-btn-primary {
+    background-color: $background-color;
+    border: none;
+    width: 100%;
+    
+    &:hover {
+      background-color: $content-background;
+      border: none;
+    }
+  }
+}
+
 h1, h2, h3, h4, h5, h6 {
   color: $highlight-color;
 }

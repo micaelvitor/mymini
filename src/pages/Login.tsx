@@ -1,10 +1,29 @@
 import { Form, Input, Button, Card, Typography } from 'antd';
+import { useNavigate } from 'react-router-dom';
+import { useAuthStore } from '../store/authStore';
+import { useEffect } from 'react';
 
 const { Title } = Typography;
 
 const Login = () => {
+  const login = useAuthStore((state) => state.login);
+  const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate('/panel');
+    }
+  }, [isAuthenticated, navigate]);
+
   const onFinish = (values: any) => {
-    console.log('Login successful with values:', values);
+    console.log("Auth Store State:", useAuthStore.getState());
+    const success = login(values.email, values.password);
+    if (success) {
+      navigate('/panel');
+    } else {
+      console.log('Email ou senha inválidos');
+    }
   };
 
   const onFinishFailed = (errorInfo: any) => {
@@ -12,8 +31,8 @@ const Login = () => {
   };
 
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: '#f0f2f5' }}>
-      <Card style={{ width: 300, textAlign: 'center' }}>
+    <div className="login-page">
+      <Card className="login-card">
         <Title level={3}>Login</Title>
         <Form
           name="login"
@@ -42,7 +61,7 @@ const Login = () => {
           </Form.Item>
 
           <Form.Item>
-            <Button type="primary" htmlType="submit" block>
+            <Button type="primary" htmlType="submit">
               Entrar
             </Button>
           </Form.Item>
