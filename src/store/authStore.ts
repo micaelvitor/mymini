@@ -5,6 +5,7 @@ interface AuthState {
   isAuthenticated: boolean;
   login: (email: string, password: string) => boolean;
   logout: () => void;
+  handleLogout: () => void;
 }
 
 export const useAuthStore = create<AuthState>()(
@@ -20,6 +21,10 @@ export const useAuthStore = create<AuthState>()(
         return false;
       },
       logout: () => {
+        set({ isAuthenticated: false });
+        localStorage.removeItem('auth-expiration');
+      },
+      handleLogout: () => {
         set({ isAuthenticated: false });
         localStorage.removeItem('auth-expiration');
       },
