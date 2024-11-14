@@ -1,36 +1,44 @@
 // src/components/BlogPosts.tsx
 import { List, Typography } from 'antd';
 import { Link } from 'react-router-dom';
+import PostForm from './PostForm';
+import { Post } from '@/types';
+import { useState } from 'react';
 
 const { Title, Text } = Typography;
 
-type Post = {
-  title: string;
-  date: string;
-  link: string;
-};
+const BlogPosts: React.FC = () => {
+  const [posts, setPosts] = useState<Post[]>([]);
 
-interface BlogPostsProps {
-  posts: Post[];
-}
+  const handleAddPost = (post: Omit<Post, "id" | "createdAt">) => {
+    const newPost = {
+      ...post,
+      id: (posts.length + 1).toString(),
+      createdAt: new Date().toISOString(),
+    }
+    setPosts([...posts, newPost]);
+  }
 
-const BlogPosts = ({ posts }: BlogPostsProps) => {
   return (
     <div className="blog-posts">
-      <Title level={3} className="blog-title">Music, I.T Stuff, Shitpost</Title>
-      <Title level={3} className="blog-sub-tittle">Blog Posts</Title>
-      <List
-        itemLayout="horizontal"
-        dataSource={posts}
-        renderItem={(post) => (
-          <List.Item className="post-item">
-            <div>
-              <Link to={post.link}>{post.title}</Link>
-              <Text className="post-date">{post.date}</Text>
-            </div>
-          </List.Item>
-        )}
-      />
+      <Title style={{color: '#7D98C3', textAlign: 'center', marginBottom: '24px'}} level={1}>Blog Posts
+        <div style={{ marginTop: '24px' }}>
+          <PostForm onSubmit={handleAddPost} />
+        </div>
+
+      </Title>
+      
+
+      <div className="post-list">
+        {posts.map((post) => (
+          <div key={post.id} className="post-item">
+            <Title style={{color: '#7D98C3'}} level={3}>{post.title}</Title>
+            <Text style={{color: '#94AACD', fontSize: '20px'}}>{post.content}</Text>
+            <br />
+            <Text style={{color: '#94AACD', fontSize: '14px'}} type="secondary">{new Date(post.createdAt).toLocaleString()}</Text>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
