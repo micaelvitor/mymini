@@ -1,4 +1,3 @@
-// src/components/BlogPosts.tsx
 import { List, Typography } from 'antd';
 import { Link } from 'react-router-dom';
 
@@ -17,8 +16,7 @@ interface BlogPostsProps {
 const BlogPosts = ({ posts }: BlogPostsProps) => {
   return (
     <div className="blog-posts">
-      <Title level={3} className="blog-title">Music, I.T Stuff, Shitpost</Title>
-      <Title level={3} className="blog-sub-tittle">Blog Posts</Title>
+      <Title level={3} className="blog-sub-title">Blog Posts</Title>
       <List
         itemLayout="horizontal"
         dataSource={posts}

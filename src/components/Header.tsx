@@ -11,8 +11,6 @@ export const Header = () => {
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
   const handleLogout = useAuthStore((state) => state.handleLogout);
 
-  console.log("isAuthenticated:", isAuthenticated); // Verifique o valor aqui
-
   const menu = (
     <Menu>
       <Menu.Item key="panel">
@@ -37,14 +35,14 @@ export const Header = () => {
         <AntLink href={socialLinks.bluesky} target="_blank">
           Bluesky
         </AntLink>
-        {isAuthenticated && (
+      </div>
+      {isAuthenticated && (
         <Dropdown overlay={menu} placement="bottomRight">
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <Avatar src="profile.jpg" alt="User Avatar" />
+          <div className="header-avatar">
+            <Avatar src="/profile.jpg" alt="User Avatar" />
           </div>
         </Dropdown>
       )}
-      </div>
     </AntHeader>
   );
 };
