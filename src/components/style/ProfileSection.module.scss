@@ -1,0 +1,68 @@
+$highlight-color: #ffffff;
+$text-color: #fffffffa;
+
+.blog-posts {
+  text-align: left; 
+  padding: 0 16px;
+  max-width: 900px; 
+  margin: 0 auto;
+
+  .blog-title {
+    text-align: center; 
+    color: $highlight-color;
+    margin-bottom: 24px;
+  }
+
+  .blog-sub-title {
+    color: $highlight-color
+  }
+
+  .post-item {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 8px 0;
+
+    a {
+      font-size: 1.1rem;
+      color: $text-color;
+      text-decoration: none;
+
+      &:hover {
+        color: $highlight-color;
+      }
+    }
+
+    .post-date {
+      font-size: 0.9rem;
+      color: $text-color;
+      margin-left: 16px;
+    }
+  }
+}
+
+.profile-section {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  gap: 24px;
+
+  .ant-avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-title {
+    font-size: 2.5rem;
+    color: $text-color;
+    text-align: center;
+  }
+  
+  .blog-title {
+    color: $highlight-color;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+}

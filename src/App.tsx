@@ -1,3 +1,4 @@
+// src/App.tsx
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Layout } from 'antd';
 import { Header } from './components/Header';
@@ -7,16 +8,21 @@ import PostDetails from './pages/PostDetails';
 import Login from './pages/Login';
 import './styles/global.scss';
 
+const { Content } = Layout;
+
 const App = () => {
   return (
     <Router>
-      <Layout style={{ minHeight: '100vh', minWidth: '100vw' }}>
+      <Layout className="layout">
         <Header />
-        <Routes>
-          <Route path='/login' element={<Login/>} />
-          <Route path="/" element={<Home />} />
-          <Route path="/posts/:postId" element={<PostDetails />} />
-        </Routes>
+        <Content className="ant-layout-content">
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/posts/:postId" element={<PostDetails />} />
+          </Routes>
+        </Content>
+
         <Footer />
       </Layout>
     </Router>

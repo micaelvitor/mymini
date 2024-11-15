@@ -1,0 +1,24 @@
+.post-card {
+    margin-bottom: 16px;
+    background-color: $content-background;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  
+    .ant-card-head-title {
+      color: $highlight-color;
+    }
+  
+    .ant-card-body {
+      color: $text-color;
+    }
+  
+    .ant-btn-primary {
+      background-color: $highlight-color;
+      border-color: $highlight-color;
+  
+      &:hover {
+        background-color: $highlight-color, 10%;
+        border-color: $highlight-color, 10%;
+      }
+    }
+  }

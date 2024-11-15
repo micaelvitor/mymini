@@ -2,8 +2,6 @@ import { Layout } from 'antd';
 import ProfileSection from '../components/ProfileSection';
 import BlogPosts from '../components/BlogPosts';
 
-const { Content } = Layout;
-
 const Home = () => {
   const posts = [
     {
@@ -16,14 +14,11 @@ const Home = () => {
     },
   ];
   
-
   return (
-    <Content>
-      <div style={{ maxWidth: '900px', width: '100%' }}>
-        <ProfileSection />
-        <BlogPosts posts={posts} />
-      </div>
-    </Content>
+    <div style={{ maxWidth: '900px', width: '100%' }}>
+      <ProfileSection />
+      <BlogPosts posts={posts} />
+    </div>
   );
 };
 
